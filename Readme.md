@@ -32,7 +32,7 @@ The fairwinds pod controller is a kubernetes controller that performs custom act
       https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/
 
 
-### Installation
+## Installation
 
   *. To pull the docker image from a container registry, run the command below:
 
@@ -52,6 +52,20 @@ The fairwinds pod controller is a kubernetes controller that performs custom act
     ``` helm upgrade --install podlog podlog ```
 
 
+## Usage
+
+   *. In order to specify the namespaces to watch:
+        Edit line 12 on ```podlog/values.yaml```
+
+   *. In order to specify the annotation to watch:
+        Edit line 13 on ```podlog/values.yaml```
+        
+   *. Run run a custom manifest file containing pods:
+        Run ```kubectl <path-to-test-pod.yaml>```
+        
+## Screenshots
+
+imageedit_2_9013813631.gif![imageedit_2_9013813631](https://user-images.githubusercontent.com/37749047/121085142-69b17400-c7d9-11eb-81b2-4e95e8a830a9.gif)
 
 ## Contributing
 
