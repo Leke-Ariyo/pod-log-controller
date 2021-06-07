@@ -1,0 +1,77 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: tester
+
+---        
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testpod
+  labels:
+    name: testpod
+  annotations:
+    watch: "true"
+spec:
+  containers:
+  - name: testpod
+    image: nginx
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+  labels:
+    name: myapp
+spec:
+  containers:
+  - name: myapp
+    image: nginx
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lekappwithwatch
+  namespace: tester
+  labels:
+    name: lekappwithwatch
+  annotations:
+    watch: "true"
+spec:
+  containers:
+  - name: myappwithwatch
+    image: nginx
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: funshoappwithwatch
+  namespace: tester
+  labels:
+    name: funshoappwithwatch
+  annotations:
+    watch: "true"
+spec:
+  containers:
+  - name: funshoappwithwatch
+    image: nginx
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
