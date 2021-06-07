@@ -45,7 +45,7 @@ The fairwinds pod controller is a kubernetes controller that performs custom act
     ```docker push <username>/<repository-name>:<tag>```
 
 
-  *. To remove the chart from helm, run
+  *. To remove and upgrade the chart from helm, run
 
     ``` helm uninstall podlog ```  
 
